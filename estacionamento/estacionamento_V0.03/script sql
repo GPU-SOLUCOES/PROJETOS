@@ -1,0 +1,88 @@
+-- Criação das tabelas
+
+CREATE TABLE dias_funcionamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    dia VARCHAR(10) NOT NULL,
+    aberto BOOLEAN NOT NULL,
+    hora_abertura TIME,
+    hora_fechamento TIME
+);
+
+CREATE TABLE tarifas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_veiculo VARCHAR(50) NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE servicos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    valor DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE entradas_saidas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    placa VARCHAR(20) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    hora_entrada DATETIME NOT NULL,
+    hora_saida DATETIME
+);
+
+CREATE TABLE pagamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    placa VARCHAR(20) NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    data DATETIME NOT NULL
+);
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE relatorios_personalizados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    consulta TEXT NOT NULL
+);
+
+-- Inserção de dados de exemplo
+
+INSERT INTO dias_funcionamento (dia, aberto, hora_abertura, hora_fechamento) VALUES
+('Segunda', TRUE, '08:00:00', '18:00:00'),
+('Terça', TRUE, '08:00:00', '18:00:00'),
+('Quarta', TRUE, '08:00:00', '18:00:00'),
+('Quinta', TRUE, '08:00:00', '18:00:00'),
+('Sexta', TRUE, '08:00:00', '18:00:00'),
+('Sábado', FALSE, NULL, NULL),
+('Domingo', FALSE, NULL, NULL);
+
+INSERT INTO tarifas (tipo_veiculo, valor) VALUES
+('Carro', 10.00),
+('Moto', 5.00),
+('Caminhão', 20.00);
+
+INSERT INTO servicos (nome, descricao, valor) VALUES
+('Lavagem Completa', 'Lavagem completa do veículo', 50.00),
+('Troca de Óleo', 'Troca de óleo e filtro', 100.00),
+('Alinhamento', 'Alinhamento e balanceamento', 80.00);
+
+INSERT INTO entradas_saidas (placa, tipo, hora_entrada, hora_saida) VALUES
+('ABC-1234', 'Carro', '2024-05-01 08:00:00', '2024-05-01 10:00:00'),
+('XYZ-5678', 'Moto', '2024-05-01 09:00:00', '2024-05-01 11:00:00'),
+('DEF-9101', 'Caminhão', '2024-05-01 07:00:00', '2024-05-01 12:00:00');
+
+INSERT INTO pagamentos (placa, valor, data) VALUES
+('ABC-1234', 20.00, '2024-05-01 10:00:00'),
+('XYZ-5678', 10.00, '2024-05-01 11:00:00'),
+('DEF-9101', 40.00, '2024-05-01 12:00:00');
+
+INSERT INTO usuarios (email, senha) VALUES
+('admin@exemplo.com', '$2y$10$K1N0QnFd5X8OVjFQ7XByqOeyUo5gBpPd9Ehv./A8/eFP8ZPz9g0lW'); -- senha é 'admin'
+
+INSERT INTO relatorios_personalizados (nome, descricao, consulta) VALUES
+('Relatório de Entradas e Saídas', 'Mostra todas as entradas e saídas', 'SELECT * FROM entradas_saidas'),
+('Relatório de Pagamentos', 'Mostra todos os pagamentos realizados', 'SELECT * FROM pagamentos');

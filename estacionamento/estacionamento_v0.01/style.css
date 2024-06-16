@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #333;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: #4CAF50;
+}
+
+.alert-info {
+    background-color: #2196F3;
+}
+
+.alert-warning {
+    background-color: #ff9800;
+}
+
+.alert-close {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alert-close:hover {
+    color: black;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+    margin-top: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.menu a {
+    color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+menu a:hover {
+    background-color: #ddd;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
